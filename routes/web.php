@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/trainings', [TrainingController::class, 'index'])->name('trainings.index');
     Route::get('/trainings/show', [TrainingController::class, 'show'])->name('trainings.show');
+    Route::get('/calendar', [EventController::class, 'show'])->name("show"); 
+    Route::post('/calendar/create', [EventController::class, 'create'])->name("create");
+    Route::post('/calendar/get',  [EventController::class, 'get'])->name("get");
 });
 
 require __DIR__.'/auth.php';
