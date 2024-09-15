@@ -38,7 +38,7 @@ if (calendarEl) {
         headerToolbar: { 
             start: "prev,next today", // ヘッダー左（前月、次月、今日の順番で左から配置）
             center: "title", // ヘッダー中央（今表示している月、年）
-            end: "eventAddButton, dayGridMonth,timeGridWeek", // ヘッダー右（月形式、時間形式）
+            end: "eventAddButton dayGridMonth,timeGridWeek", // ヘッダー右（月形式、時間形式）
         },
         height: "auto", // 高さをウィンドウサイズに揃える
         
