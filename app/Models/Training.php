@@ -1,4 +1,5 @@
-<?p
+<?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,14 +11,18 @@ class Training extends Model
     
     protected $table = 'trainings';
     
-     protected $fillable = [
+    protected $fillable = [
         'task_id',
         'name',
         'description',
     ];
 
-      public function task()
+    public function task()
     {
         return $this->belongsTo(Task::class);
+    }
+    public function achievements()   
+    {
+        return $this->hasMany(Achievement::class);  
     }
 }

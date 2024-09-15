@@ -29,7 +29,11 @@
             <button onclick="stopTimer('chestfly')">[ストップ]</button>
         </li>
     </ul>
-
+    <div>
+        @foreach($trainings_data as $data)
+            <h3>{{$data->name}}</h3>
+        @endforeach
+    </div>
     <!-- タイマー用のJavaScript -->
     <script>
         let timers = {};
@@ -48,6 +52,7 @@
             clearInterval(intervals[exercise]);
             intervals[exercise] = null;
             // ここでタイムを保存する処理を後で追加できます
+           
         }
 
         function formatTime(seconds) {
